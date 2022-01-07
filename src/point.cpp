@@ -3,6 +3,7 @@
 #include "gl_canvas2d.h"
 #include "point.h"
 
-void Point::printPoint(double x, double y){
-    CV::circleFill(x, y, 20, 5);
+void QPoint::printPoint(double x, double y){
+        CV::color(0,0,0);
+        CV::circleFill(x, y, 5, 20);
 }

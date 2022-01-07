@@ -5,15 +5,13 @@
 
 #define P 50
 
-class Point{
-public:
- int qtd = P;
- double x;
- double y;
- int coordX[P] = {0};
- int coordY[P] = {0};
- void printPoint(double x, double y);
-};
-extern Point *point;
+namespace QPoint{
+    class Point{
+    public:
+     int coordX[P] = {0};
+     int coordY[P] = {0};
+    };
+    void printPoint(double x, double y);
+}
 #endif // __POINT_H__
 
