@@ -352,13 +352,18 @@
 	"gl_canvas2d.h"
 	"point.h"
 
-1641580606 c:\users\maure\documents\github\quadtree\src\point.h
+1641830056 c:\users\maure\documents\github\quadtree\src\point.h
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 
-1641571439 source:c:\users\maure\documents\github\quadtree\src\rectangle.cpp
+1641830394 source:c:\users\maure\documents\github\quadtree\src\rectangle.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"gl_canvas2d.h"
+	"point.h"
+	"rectangle.h"
 
-1641580606 source:c:\users\maure\documents\github\quadtree\src\quadtree.cpp
+1641829994 source:c:\users\maure\documents\github\quadtree\src\quadtree.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	"gl_canvas2d.h"
@@ -375,7 +380,7 @@
 	"point.h"
 	"quadtree.h"
 
-1641580606 c:\users\maure\documents\github\quadtree\src\rectangle.h
+1641830394 c:\users\maure\documents\github\quadtree\src\rectangle.h
 	<GL/glut.h>
 
 1641580635 c:\users\maure\documents\github\quadtree\src\quadtree.h

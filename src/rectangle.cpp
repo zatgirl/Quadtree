@@ -6,7 +6,7 @@
 
 int xMax, xMin, yMax, yMin;
 
-void QRect::quadrante(double x, double y){
+//void Rect::quadrante(double x, double y){
 
-}
+//}
 

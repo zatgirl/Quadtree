@@ -49,8 +49,11 @@
 		<Unit filename="src/gl_canvas2d.h" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/point.cpp" />
+		<Unit filename="src/point.h" />
 		<Unit filename="src/quadtree.cpp" />
+		<Unit filename="src/quadtree.h" />
 		<Unit filename="src/rectangle.cpp" />
+		<Unit filename="src/rectangle.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

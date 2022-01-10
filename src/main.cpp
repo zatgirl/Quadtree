@@ -19,6 +19,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 #include "gl_canvas2d.h"
 #include "rectangle.h"
@@ -29,26 +30,29 @@
 int screenWidth = 512, screenHeight = 512; //largura e altura inicial da tela. Alteram com o redimensionamento de tela.
 
 int qtdPoint = 0;
+double logQt;
 
 QPoint::Point*point = new QPoint::Point();
-QRect::Rect*rect = new QRect::Rect();
+Rect*limite = new Rect();
+Quadtree*quadtree = new Quadtree();
 
 void render()
 {
+    limite->x = 250;
+    limite->y = 250;
+    limite->h = 250;
+    limite->w = 250;
+    //quadtree->limite=limite;
+    quadtree->capacidade = 4;
+
     //Desenha pontos
     if (qtdPoint != 0){
         for (int i = 0; i < 50; i++){
             QPoint::printPoint(point->coordX[i], point->coordY[i]);
+            quadtree(QPoint::printPoint);
         }
     }
-    /*while(){
-        for(int y = point->y; y < ; y++){
-            for(int x = point->x; x < ; x++){
-                CV::color(0,0,0) ==
-            }
-        }
-    }
-    quadtree(point->x, point->y, )*/
+
 }
 
 //funcao chamada toda vez que uma tecla for pressionada
