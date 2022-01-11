@@ -11,6 +11,8 @@ namespace QPoint{
      int coordX[P] = {0};
      int coordY[P] = {0};
     };
+    extern Point*coord;
+
     void printPoint(double x, double y);
 }
 #endif // __POINT_H__

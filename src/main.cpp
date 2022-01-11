@@ -31,13 +31,17 @@ int screenWidth = 512, screenHeight = 512; //largura e altura inicial da tela. A
 
 int qtdPoint = 0;
 double logQt;
-
 QPoint::Point*point = new QPoint::Point();
-Rect*limite = new Rect();
-Quadtree*quadtree = new Quadtree();
 
 void render()
 {
+    QRect::Rect*limite = new QRect::Rect();
+    Quadtree*quadtree = new Quadtree();
+    Quadtree*northWest = new Quadtree();
+    Quadtree*northEast = new Quadtree();
+    Quadtree*southWest = new Quadtree();
+    Quadtree*southEast = new Quadtree();
+
     limite->x = 250;
     limite->y = 250;
     limite->h = 250;
@@ -48,8 +52,9 @@ void render()
     //Desenha pontos
     if (qtdPoint != 0){
         for (int i = 0; i < 50; i++){
-            QPoint::printPoint(point->coordX[i], point->coordY[i]);
-            quadtree(QPoint::printPoint);
+            recepPoint(point->coordX[i], point->coordY[i]);
+            //QPoint::printPoint(point->coordX[i], point->coordY[i]);
+            //quadtree(QPoint::printPoint);
         }
     }
 

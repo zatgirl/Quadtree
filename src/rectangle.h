@@ -2,7 +2,7 @@
 #define __RECTANGLE__
 #include <GL/glut.h>
 
-//namespace QRect {
+namespace QRect {
     class Rect {
     public:
      double x;
@@ -11,7 +11,7 @@
      double w;
     };
     //void quadrante(double x, double y);
-//}
+}
 //void(this x, this y)
 
 #endif // __RECTANGLE__
