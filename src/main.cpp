@@ -16,46 +16,41 @@
 #include <GL/glut.h>
 #include <GL/freeglut_ext.h> //callback da wheel do mouse.
 
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
 #include <math.h>
 
 #include "gl_canvas2d.h"
-#include "rectangle.h"
-#include "point.h"
-#include "quadtree.h"
+#include "mergesort.h"
+#include "circles.h"
 
 //variaveis globais
 int screenWidth = 512, screenHeight = 512; //largura e altura inicial da tela. Alteram com o redimensionamento de tela.
+int posMouseXfim = 0, posMouseYfim = 0, stateMouse;
+int posMouseX, posMouseY, keyPress, desenhos;
 
-int qtdPoint = 0;
-double logQt;
-QPoint::Point*point = new QPoint::Point();
+using namespace std;
 
 void render()
 {
-    QRect::Rect*limite = new QRect::Rect();
-    Quadtree*quadtree = new Quadtree();
-    Quadtree*northWest = new Quadtree();
-    Quadtree*northEast = new Quadtree();
-    Quadtree*southWest = new Quadtree();
-    Quadtree*southEast = new Quadtree();
-
-    limite->x = 250;
-    limite->y = 250;
-    limite->h = 250;
-    limite->w = 250;
-    //quadtree->limite=limite;
-    quadtree->capacidade = 4;
-
-    //Desenha pontos
-    if (qtdPoint != 0){
-        for (int i = 0; i < 50; i++){
-            recepPoint(point->coordX[i], point->coordY[i]);
-            //QPoint::printPoint(point->coordX[i], point->coordY[i]);
-            //quadtree(QPoint::printPoint);
+    //Desenha círculos
+    if(keyPress != (109)){
+        CV::color(1,0,0);
+        CV::text(9,500, "Desenhe os circulos:");
+        while(true){
+            CV::circleFill(posMouseX, posMouseY, calcRadius(posMouseX, posMouseY, posMouseXfim, posMouseYfim), 20);
+            saveCircle(posMouseX,posMouseY,calcRadius(posMouseX, posMouseY, posMouseXfim, posMouseYfim));
+            if (keyPress == 109){
+                break;
+            }
+            desenhos++;
         }
+    }
+    //Exibe circulos(raios)
+    if(keyPress == 109){
+        CV::color(1,0,0);
+        CV::text(20,500, "Raio dos circulos desenhados:");
+        CV::color(0,1,0);
+        drawCircle();
     }
 
 }
@@ -63,7 +58,8 @@ void render()
 //funcao chamada toda vez que uma tecla for pressionada
 void keyboard(int key)
 {
-   printf("\nTecla: %d" , key);
+   printf("\nTecla: %d", key);
+   keyPress = key;
 }
 //funcao chamada toda vez que uma tecla for liberada
 void keyboardUp(int key)
@@ -75,18 +71,22 @@ void keyboardUp(int key)
 //funcao para tratamento de mouse: cliques, movimentos e arrastos
 void mouse(int button, int state, int wheel, int direction, int x, int y)
 {
-   //printf("\nmouse %d %d %d %d %d %d", button, state, wheel, direction,  x, y);
-        //maxCont = x/2 - 20;
-        if (state == 1){
-            point->coordX[qtdPoint] = x;
-            point->coordY[qtdPoint] = y;
-            qtdPoint++;
-        }
+   printf("\nmouse %d %d %d %d %d %d", button, state, wheel, direction,  x, y);
+    if (state == 0){
+        posMouseX = x;
+        posMouseY = y;
+    }
+    if (state == 1){
+        posMouseXfim = x;
+        posMouseYfim = y;
+    }
+    stateMouse = state;
+
 }
 
 int main(void)
 {
-   CV::init(&screenWidth, &screenHeight, "Quadtree");
+   CV::init(&screenWidth, &screenHeight, "MergeSort");
 
    CV::run();
 }

@@ -45,15 +45,13 @@
 		</Linker>
 		<Unit filename="include/GL/glut.h" />
 		<Unit filename="src/auxiliar.h" />
+		<Unit filename="src/circles.cpp" />
+		<Unit filename="src/circles.h" />
 		<Unit filename="src/gl_canvas2d.cpp" />
 		<Unit filename="src/gl_canvas2d.h" />
 		<Unit filename="src/main.cpp" />
-		<Unit filename="src/point.cpp" />
-		<Unit filename="src/point.h" />
-		<Unit filename="src/quadtree.cpp" />
-		<Unit filename="src/quadtree.h" />
-		<Unit filename="src/rectangle.cpp" />
-		<Unit filename="src/rectangle.h" />
+		<Unit filename="src/mergesort.cpp" />
+		<Unit filename="src/mergesort.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
